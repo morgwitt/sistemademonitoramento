@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nodejs temperatura teste </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<%- include('partials/head') %>
+
+
+	<style media="screen">
+		body{
+			background: #BEBEBE;
+		}
+	</style>
+
+</head>
+<body>
+	<%- include('partials/navegacao') %>
+
+	<div class="jumbotron">
+		<p class="lead">Monitroramento da cultura do morangueiro.</p>
+		<hr class="my-4">
+	</div>
+
+
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<form method="post">
+				<input  class="form-control" name="rmuser" placeholder="Digite o nome a ser removido" /><br>
+				<button class="btn btn-dark"><a href="/admin/adm"></a> Enviar </button>
+			</form>
+			<br>
+			<a href="/admin/adm"><button class="btn btn-dark">Voltar</button></a>
+		</div>
+	</div>
+	
+
+
+	
+
+</body>
+</html>
+
+
+
+
+

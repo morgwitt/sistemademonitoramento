@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nodejs temperatura teste </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<%- include('partials/head') %>
+
+
+	<style media="screen">
+		body{
+			background: #BEBEBE;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="jumbotron">
+		<h1 class="display-4">Bem-vindo!</h1>
+		<p class="lead">Faça Login para entrar no sistema</p>
+		<hr class="my-4">
+	</div>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<div class="col">
+				<form method="POST">
+					<label>E-mail</label>
+					<input class="form-control" name="email"/>
+					<br>
+					<label>Senha</label>
+					<input  class="form-control" type="password" name="pass"/>
+
+					<br>
+					<button type="submit" class="btn btn-dark">Entrar</button>
+
+				</form>
+        </div>
+		</div>
+	</div>
+
+
+
+	
+</body>
+</html>

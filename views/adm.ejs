@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nodejs temperatura teste </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<%- include('partials/head') %>
+
+
+	<style media="screen">
+		body{
+			background: #BEBEBE;
+		}
+	</style>
+
+</head>
+<body>
+	<%- include('partials/navegacao') %>
+
+	<div class="jumbotron">
+		<h1 class="display-4">Bem-vindo Administrador!</h1>
+		<p class="lead">Monitroramento da cultura do morangueiro.</p>
+		<hr class="my-4">
+		
+	</div>
+
+
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h3>Usuários cadastrados no sistema</h3>
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th>Nome User</th>
+						<th>Foto User</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (u of users) { %>
+					<tr>
+						<td> <%= u.user %> </td>
+						<td><img  width="50" height="50" src="<%= u.imagem %>"></td>
+					</tr>
+					 <% } %>
+				</tbody>
+			</table>
+			<a href="/admin/adicionarUser" class="btn"><button class="btn btn-dark">Adicionar</button></a>
+
+			<a href="/admin/removerUser" class = "btn"><button class="btn btn-dark">Remover um Usuário</button> </a>
+		
+			
+		</div>
+	</div>
+	
+
+
+	
+
+</body>
+</html>

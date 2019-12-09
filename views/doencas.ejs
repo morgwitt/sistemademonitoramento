@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Doenças</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+			<%- include('partials/head') %>
+		</head>
+	<body>
+		<%- include('partials/navegacao') %>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			const socket = io();
+
+			socket.on('temp', (data) =>{
+				let teste = data;
+				let x = teste.split("").filter(Number).join("");
+				
+				if((x>19) && (x<31) ){
+					console.log(x);
+					let temp = document.getElementById('temperature');
+					temp.innerHTML = `${data}`;
+				}
+				
+			});
+			socket.on('hum', (data) =>{
+				//console.log(data);
+				let temp = document.getElementById('humidade');
+				//temp.innerHTML = `${data}`;
+			});
+			socket.on('soil', (data) =>{
+				//console.log(data);
+				let temp = document.getElementById('solo');
+				//temp.innerHTML = `${data}`;
+			});
+		</script>
+
+
+		<div class="jumbotron">
+			<div class="jumbotron jumbotron-fluid">
+				<h1>Doencas causadas por Fungos</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Temperatura atual</th>
+							<th scope="col">Temperatura Doença</th>
+							<th scope="col">Doença</th>
+							<th scope="col">Alguns manejos indicados</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td id="temperature"></td>
+						<td>Entre 20°C - 30°C</td>
+						<td>Flor Preta</td>
+						<td>Rotação de Culturas (2 anos), Mudas sadias, evitar irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Colletotrichum%20acutatum6.jpg" width=width="160" height="120" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 22°C - 26°C</td>
+						<td>Mancha de micosferela</td>
+						<td>Rotação de Culturas (2 anos), Cultivo em túneis, Mudas sadias, evitar irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Mycosphaerella_fragariae61.jpg" width="160" height="150"/></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 20°C - 25°C</td>
+						<td>Mancha de gnomonia</td>
+						<td>Rotação de Culturas (2 anos), Mudas sadias, evitar irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Diplocarpon_earlianum68.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 21°C - 25°C</td>
+						<td>Mancha de pestalotia</td>
+						<td>Mudas sadias, evitar irrigação por aspersão, evitar estresse nas plantas</td>
+						<td><img src="https://i.ytimg.com/vi/C2qLZIpFqz4/maxresdefault.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 24°C - 28°C</td>
+						<td>Mancha de dendrophoma</td>
+						<td>Rotação de Culturas (2 anos), Mudas sadias, evitar irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Phomopsis_obscurans10.jpg" width="160" height="150" /></td>
+						</tr>
+						
+						<tr>
+						<td></td>
+						<td>Entre 20°C - 30°C</td>
+						<td>Mancha de oídio</td>
+						<td>Cuidado com a baixa umidade relativa e mal lumisidade, evitar cultivo em túneis ou estufas, trabalhar com mudas sadias</td>
+						<td><img src="https://www.sanaagro.com.br/wp-content/uploads/2016/06/o%C3%ADdio.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 24°C - 28°C</td>
+						<td>Mancha de diplocarpon</td>
+						<td>Rotação de Culturas (2 anos), Mudas sadias, evitar irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Diplocarpon_earlianum62.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 21°C - 24°C</td>
+						<td>Murcha de verticillium</td>
+						<td>Aumentar teor de matéria organica no solo, Mudas sadias, Solarização e bio-fumigação em reboleiras</td>
+						<td><img src="https://madlovefarms.com/img/strawberries-2018/verticillium-wilt-of-strawberries-how-to-fight-3.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 16°C - 22°C</td>
+						<td>Murcha de sclerotinia</td>
+						<td>Mudas sadias, cuidado com o excesso de água, fazer Roguing das plantas infectadas</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Sclerotinia_sclerotiorum57.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 20°C - 24°C</td>
+						<td>Murcha de sclerotium </td>
+						<td> cuidado com a alta umidade relativa e do solo, tenha mudas sadias e rotação de culturas</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/Sclerotium_rolfsii50.jpg" width="160" height="150" /></td>
+						</tr>
+
+						<tr>
+						<td></td>
+						<td>Entre 21°C - 27°C</td>
+						<td>Antracnose do rizoma</td>
+						<td> Evite o excesso de água, tenha mudas sadias, Rotação de Culturas (2 anos), evite irrigação por aspersão</td>
+						<td><img src="https://www.agrolink.com.br/upload/problemas/1608-655-PP-angls-4.jpg" width="160" height="150" /></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+
+				<h1>Doença causada por Bactéria</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Temperatura atual</th>
+							<th scope="col">Temperatura Doença</th>
+							<th scope="col">Doença</th>
+							<th scope="col">Alguns manejos indicados</th>	
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td id="temperature"></td>
+						<td>Entre 18°C - 22°C</td>
+						<td>Mancha angular</td>
+						<td>Rotação de Culturas (2 anos), Mudas sadias, evitar irrigação por aspersão, cultivo em túneis</td>
+						<td><img src="https://flores.culturamix.com/blog/wp-content/gallery/morango-furiose-1/morango-furiose-2.jpg" width="160" height="150" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
+
+
+
